@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\components",
+    "\\pages",
+    "\\pages\\api",
+    "\\pages\\public"
   ],
-  "SelectedNode": "\\C:\\Users\\asus\\Source\\Repos\\disney-clone",
+  "SelectedNode": "\\tailwind.config.js",
   "PreviewInSolutionExplorer": false
 }
