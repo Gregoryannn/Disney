@@ -4,8 +4,9 @@
     "\\components",
     "\\pages",
     "\\pages\\api",
+    "\\pages\\api\\auth",
     "\\pages\\public"
   ],
-  "SelectedNode": "\\pages\\index.js",
+  "SelectedNode": "\\pages\\api\\auth\\[...nextauth].js",
   "PreviewInSolutionExplorer": false
 }
