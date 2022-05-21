@@ -7,8 +7,8 @@ import Header from "../../components/Header";
 import Hero from "../../components/Hero";
 import { PlusIcon, XIcon } from "@heroicons/react/solid";
 import ReactPlayer from "react-player/lazy";
+
 function Show({ result }) {
-    console.log(result);
     const [session] = useSession();
     const BASE_URL = "https://image.tmdb.org/t/p/original/";
     const router = useRouter();
@@ -24,7 +24,7 @@ function Show({ result }) {
     return (
         <div className="relative">
             <Head>
-                <title>Disney</title>
+                <title>{result.title || result.original_name}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />

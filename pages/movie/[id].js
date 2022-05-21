@@ -9,7 +9,6 @@ import { PlusIcon, XIcon } from "@heroicons/react/solid";
 import ReactPlayer from "react-player/lazy";
 
 function Movie({ result }) {
-    console.log(result);
     const [session] = useSession();
     const BASE_URL = "https://image.tmdb.org/t/p/original/";
     const router = useRouter();
@@ -25,7 +24,7 @@ function Movie({ result }) {
     return (
         <div className="relative">
             <Head>
-                <title>Disney</title>
+                <title>{result.title || result.original_name}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
@@ -81,7 +80,6 @@ function Movie({ result }) {
                         <p className="text-xs md:text-sm">
                             {result.release_date || result.first_air_date} •{" "}
                             {Math.floor(result.runtime / 60)}h {result.runtime % 60}m •{" "}
-                            {/* {result.genres.map((genre) => genre.name + ", ")} */}
                             {result.genres.map((genre) => genre.name + " ")}{" "}
                         </p>
                         <h4 className="text-sm md:text-lg max-w-4xl">{result.overview}</h4>
