@@ -1,16 +1,26 @@
-import MovieThumbnail from "./MovieThumbnail";
+import Image from "next/image";
+import { useRouter } from "next/router";
+function MovieThumbnail({ result }) {
+    const BASE_URL = "https://image.tmdb.org/t/p/original/";
+    const router = useRouter();
 
-    function MoviesCollection({ results }) {
-        return (
-            <div className="flex flex-col space-y-4 my-8 px-8 max-w-[1250px] mx-auto">
-                <h2 className="font-semibold">Popular Movies</h2>
-                <div className="flex space-x-4 overflow-y-hidden overflow-x-scroll">
-                    {results.map((result) => (
-                        <MovieThumbnail key={result.id} result={result} />
-                    ))}
-                </div>
-            </div>
-        );
-    }
-
-    export default MoviesCollection;
+    return (
+        <div
+            className="flex min-w-[330px] min-h-[210px] rounded-lg overflow-hidden shadow-xl cursor-pointer border-[3px] border-[#f9f9f9] border-opacity-10  hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300"
+            onClick={() => router.push(`/movie/${result.id}`)}
+        >
+            <Image
+                src={
+                    `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
+                    `${BASE_URL}${result.poster_path}`
+                }
+            
+                width={330}
+                height={210}
+                objectFit="cover"
+                className="rounded-lg"
+            />
+        </div>
+    );
+}
+export default MovieThumbnail;

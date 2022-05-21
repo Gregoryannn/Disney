@@ -3,10 +3,10 @@
     "",
     "\\components",
     "\\pages",
-    "\\pages\\api",
     "\\pages\\api\\auth",
-    "\\pages\\public"
+    "\\pages\\movie",
+    "\\pages\\show"
   ],
-  "SelectedNode": "\\components\\MovieThumbnail.js",
+  "SelectedNode": "\\pages\\show\\[id].js",
   "PreviewInSolutionExplorer": false
 }
