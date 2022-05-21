@@ -7,6 +7,6 @@
     "\\pages\\api\\auth",
     "\\pages\\public"
   ],
-  "SelectedNode": "\\pages\\api\\auth\\[...nextauth].js",
+  "SelectedNode": "\\components\\MovieThumbnail.js",
   "PreviewInSolutionExplorer": false
 }
