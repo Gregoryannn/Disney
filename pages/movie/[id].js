@@ -2,17 +2,18 @@ import { getSession, useSession } from "next-auth/client";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Header from "../../components/Header";
 import Hero from "../../components/Hero";
-import { PlusIcon, XIcon } from "@heroicons/react/solid";
+import { PlusIcon } from "@heroicons/react/solid";
 import ReactPlayer from "react-player/lazy";
+import { useState } from "react"
 
 function Movie({ result }) {
     const [session] = useSession();
     const BASE_URL = "https://image.tmdb.org/t/p/original/";
     const router = useRouter();
-    const [showPlayer, setShowPlayer] = useState(false);
+    const [showPlayer, setShowPlayer] = useState(false)
 
     useEffect(() => {
         if (!session) {
@@ -22,9 +23,8 @@ function Movie({ result }) {
     const index = result.videos.results.findIndex(
         (element) => element.type === "Trailer"
     );
-
     return ( <
-        div className = "relative" >
+        div >
         <
         Head >
         <
@@ -36,7 +36,7 @@ function Movie({ result }) {
         Header / > {!session ? ( <
                 Hero / >
             ) : ( <
-                section className = "relative z-50" >
+                section className = "relative" >
                 <
                 div className = "relative min-h-[calc(100vh-72px)]" >
                 <
@@ -49,7 +49,7 @@ function Movie({ result }) {
                 >
                 <
                 /div> <
-                div className = "absolute inset-y-28 md:inset-y-auto md:bottom-10 inset-x-4 md:inset-x-12 space-y-6 z-50" >
+                div className = "absolute inset-y-28 md:inset-y-auto md:bottom-10 inset-x-4 md:inset-x-12 space-y-6" >
                 <
                 h1 className = "text-3xl sm:text-4xl md:text-5xl font-bold" > { result.title || result.original_name } <
                 /h1> <
@@ -65,10 +65,12 @@ function Movie({ result }) {
                 span className = "uppercase font-medium tracking-wide" >
                 Play <
                 /span> <
-                /button> <
+                /button>
+
+                <
                 button className = "text-xs md:text-base bg-black/30 text-[#f9f9f9] border border-[#f9f9f9] flex items-center justify-center py-2.5 px-6 rounded hover:bg-[#c6c6c6]"
                 onClick = {
-                    () => setShowPlayer(true) } >
+                    () => } >
                 <
                 img src = "/images/play-icon-white.svg"
                 alt = ""
@@ -96,40 +98,12 @@ function Movie({ result }) {
                 m• { " " } { /* {result.genres.map((genre) => genre.name + ", ")} */ } <
                 /p> <
                 h4 className = "text-sm md:text-lg max-w-4xl" > { result.overview } < /h4> <
-                /div>
-
-                { /* Bg Overlay */ } {
-                    showPlayer && ( <
-                        div className = "absolute inset-0 bg-black opacity-50 h-full w-full z-50" > < /div>
-                    )
-                }
-
-                <
-                div className = { `fixed top-20 left-60  rounded overflow-hidden transition duration-1000 ${
-              showPlayer ? "opacity-100 z-50" : "opacity-0"
-            }` } >
-                <
-                div className = "flex  items-center justify-between bg-black text-[#f9f9f9] p-3.5" >
-                <
-                span className = "font-semibold" > Play Trailer < /span> <
-                div className = "cursor-pointer w-8 h-8 flex justify-center items-center rounded-lg opacity-50 hover:opacity-75 hover:bg-[#0F0F0F]"
-                onClick = {
-                    () => setShowPlayer(false) } >
-                <
-                XIcon className = "h-5" / >
-                <
-                /div> <
-                /div> <
-                ReactPlayer url = { `https://www.youtube.com/watch?v=${result.videos.results[index].key}` }
-                width = { 1065 }
-                height = { 600 }
-                controls = { true }
-                playing = { showPlayer }
-                /> <
                 /div> <
                 /section>
             )
         } <
+        ReactPlayer url = { `https://www.youtube.com/watch?v=${result.videos.results[index].key}` }
+        /> <
         /div>
     );
 }
