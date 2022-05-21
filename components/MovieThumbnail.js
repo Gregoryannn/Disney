@@ -1,21 +1,16 @@
+import MovieThumbnail from "./MovieThumbnail";
 
-import Image from "next/image";
-function MovieThumbnail({ result }) {
-    const BASE_URL = "https://image.tmdb.org/t/p/original/";
-
-    return (
-            <div className="min-w-[300px] min-h-[150px] rounded-md overflow-hidden cursor-pointer">
-                <Image
-                    src={
-                        `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
-                        `${BASE_URL}${result.poster_path}`
-                    }
-                    width={300}
-                    height={150}
-                    objectFit="cover"
-                    className="rounded-md"
-                />
+    function MoviesCollection({ results }) {
+        return (
+            <div className="flex flex-col space-y-4 my-8 px-8 max-w-[1250px] mx-auto">
+                <h2 className="font-semibold">Popular Movies</h2>
+                <div className="flex space-x-4 overflow-y-hidden overflow-x-scroll">
+                    {results.map((result) => (
+                        <MovieThumbnail key={result.id} result={result} />
+                    ))}
+                </div>
             </div>
-            );
-}
-            export default MovieThumbnail;
+        );
+    }
+
+    export default MoviesCollection;
