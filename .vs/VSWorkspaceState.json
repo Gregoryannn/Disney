@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\components",
+    "\\pages",
+    "\\pages\\movie",
+    "\\pages\\show"
   ],
-  "SelectedNode": "\\C:\\Users\\asus\\Source\\Repos\\disney-clone8",
+  "SelectedNode": "\\pages\\show\\[id].js",
   "PreviewInSolutionExplorer": false
 }
