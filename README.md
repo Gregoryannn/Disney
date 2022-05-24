@@ -13,6 +13,8 @@ Preview the example live on [StackBlitz](http://stackblitz.com/):
 
 ##  📷 Project Demo
 
+![](https://github.com/Gregoryannn/disney-clone/blob/main/docs/disney-plus-clone-demo-1.gif)
+
 ![157304281-53d583ef-8df6-428d-a6de-340612583927](https://user-images.githubusercontent.com/32854050/169768709-ce2aea3d-22c3-459d-9f9a-3922f1efc3f5.png)
 
 ![157304342-37c8aeab-3e63-4699-a80b-227bf93d375e](https://user-images.githubusercontent.com/32854050/169768847-ec3266dc-450a-4a9a-b044-814e57636c11.png)
