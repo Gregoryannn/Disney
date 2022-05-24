@@ -11,9 +11,15 @@ Preview the example live on [StackBlitz](http://stackblitz.com/):
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
 
 
-##  📷 Project Demo
+##  📷 Project Demo Video
 
 ![](https://github.com/Gregoryannn/disney-clone/blob/main/docs/disney-plus-clone-demo-1.gif)
+
+![](https://github.com/Gregoryannn/disney-clone/blob/main/docs/disney-plus-clone-demo-2.gif)
+
+![](https://github.com/Gregoryannn/disney-clone/blob/main/docs/disney-plus-clone-demo-3.gif)
+
+##  📷 Project Demo Screens
 
 ![157304281-53d583ef-8df6-428d-a6de-340612583927](https://user-images.githubusercontent.com/32854050/169768709-ce2aea3d-22c3-459d-9f9a-3922f1efc3f5.png)
 
